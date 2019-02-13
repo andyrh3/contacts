@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+  <ng-container *ngFor="let control of controls">
+    <app-control [control]="control" [form]="form"></app-control>
+  </ng-container>
+  <div class="grid align-content-center justify-center">
+    <div class="col-12">
+      <button class="btn" type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+  </div>
+</form>
+
+<div *ngIf="payLoad">
+  <strong>Saved the following values</strong><br>{{payLoad}}
+</div>

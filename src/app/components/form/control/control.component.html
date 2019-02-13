@@ -1,0 +1,20 @@
+<div class="input__wrapper" [formGroup]="form" [ngClass]="{'input--invalid':form.controls[control.name].invalid && form.controls[control.name].dirty && form.controls[control.name].touched, 'input--valid':form.controls[control.name].valid }">
+
+  <label class="input__label" [attr.for]="control.name">{{control.label}}:</label>
+
+  <ng-container [ngSwitch]="control.controlType">
+
+    <input *ngSwitchCase="'textbox'" #cf class="input__field" type="text" [formControlName]="control.name" [attr.placeholder]="control.placeholder" [attr.name]="control.name" [attr.id]="control.name" />
+
+
+    <select *ngSwitchCase="'select'" #cf class="input__field" [formControlName]="control.name" [attr.name]="control.name" [attr.id]="control.name">
+      <option value="">{{control.placeholder}}</option>
+      <option *ngFor="let option of control.options" [value]="option.value">{{option.key}}</option>
+    </select>
+
+
+  </ng-container>
+
+</div>
+
+
