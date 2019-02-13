@@ -1,0 +1,17 @@
+<div class="contact-modal" [ngClass]="{'--open':open}" *ngIf="contact">
+
+  <div class="container stretch-height">
+
+    <div class="grid justify-center align-content-center stretch-height">
+
+      <div class="col-xs-12 col-md-6">
+        <a href="#" class="icon-ttt-standard-close --white" (keydown.enter)="onClose()" (click)="onClose()"></a>
+        <h2>Update {{contact?.name}} Details</h2>
+        <app-form [controls]="controls" (formSubmitted)="onClose()"></app-form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

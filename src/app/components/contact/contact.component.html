@@ -1,0 +1,19 @@
+<div class="container">
+  <div tabindex="0"   class="grid contact">
+    <span class="last-updated" [ngClass]="{'--show':contact?.email == contactService?.lastUpdatedContact?.email}">Updated!</span>
+    <div class="col-auto">
+      <img class="contact-pic" src="/assets/images/contacts-pic-default.png" alt="Contact image" />
+    </div>
+    <div class="col-auto">
+      <h4>{{contact?.name}}</h4>
+
+      <dl>
+        <dt>Address:</dt> <dd>{{contact?.street}}</dd>
+        <dt>Age:</dt> <dd>{{contact?.age}}</dd>
+        <dt>Email:</dt> <dd>{{contact?.email}}</dd>
+        <dt>Phone:</dt> <dd>{{contact?.phone}}</dd>
+      </dl>
+
+    </div>
+  </div>
+</div>

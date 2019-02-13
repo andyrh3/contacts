@@ -1,0 +1,9 @@
+<h3>Your current contacts</h3>
+
+<section class="grid contact-list">
+  <article class="col-xs-12 col-sm-6 col-md-3 col-grid" *ngFor="let contact of contactsService.contacts" (keydown.enter)="onSelect(contact)" (click)="onSelect(contact)" [class.selected]="contact === contactsService.selectedContact">
+    <app-contact [contact]="contact"></app-contact>
+  </article>
+</section>
+
+<app-contact-detail [contact]="contactsService.selectedContact"></app-contact-detail>
